@@ -1,14 +1,18 @@
-import './ExpenceItem.css'
+import "./ExpenceItem.css";
 
-function ExpenseItem(){
-    return (
+function ExpenseItem() {
+    const date=new Date(2022,2,28);
+    const title='Car Insurence';
+    const price=2000
+  return (
     <div className="expense-item">
-        <div>23rd March 2023</div>
-        <div className="expense-item__description">
-        <h2>Car Insurance</h2>
-        <div className="expense-item__price">2000</div>
-        </div>
-    </div>);
+      <div>{date.toString()}</div>
+      <div className="expense-item__description">
+        <h2>{title}</h2>
+        <div className="expense-item__price">{price}</div>
+      </div>
+    </div>
+  );
 }
 
 export default ExpenseItem;
