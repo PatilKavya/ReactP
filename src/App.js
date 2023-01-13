@@ -8,11 +8,7 @@ function App() {
       amount: 94.12,
       date: new Date(2020, 7, 14),
     },
-    { id: "e2",
-     title: "New TV",
-      amount: 799.49, 
-      date: new Date(2021, 2, 12)
-     },
+    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
     {
       id: "e3",
       title: "Car Insurance",
@@ -30,11 +26,15 @@ function App() {
   return (
     <div>
       <div> Let's get Started! </div>
-          {
-            expenses.map((expense)=>{
-              return <ExpenseItem date={expense.date} title={expense.title} price={expense.amount} ></ExpenseItem>
-            })
-          }
+      {expenses.map((expense) => {
+        return (
+          <ExpenseItem
+            date={expense.date}
+            title={expense.title}
+            price={expense.amount}
+          ></ExpenseItem>
+        );
+      })}
     </div>
   );
 }
