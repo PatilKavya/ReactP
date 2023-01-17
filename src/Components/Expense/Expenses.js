@@ -6,19 +6,20 @@ import './Expenses.css'
 
 const Expenses = (props) => {
 
-      const deleteHandler = (e) =>{
-            const item=e.target.parentElement
+      const deleteHandler = (event) =>{
+            const item=event.target.parentElement
            item.remove();
         
       }
-    return  (
+      
+    return (
     <Card className="expenses">
          <ExpenseItem date={props.date}
             title={props.title}
             price={props.price}></ExpenseItem>
             <button onClick={deleteHandler}>Delete Expence</button>
       </Card>
-      )
+      );
 }
 
 export default Expenses;

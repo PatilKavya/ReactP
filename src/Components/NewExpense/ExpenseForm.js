@@ -5,7 +5,7 @@ export default function ExpenceForm() {
 
   const [enteredTitle,setEnteredTitle] = useState('')
   const [enteredAmount,setEnteredAmount] = useState('')
-  const [enteredPrice,setEnteredPrice] = useState('')
+  const [enteredDate,setEnteredDate] = useState('')
 
     const titleChangeHandler=(event)=>{
       setEnteredTitle(event.target.value)
@@ -16,12 +16,27 @@ const amountChangeHandler=(event)=>{
   }
 
   const dateChangeHandler=(event)=>{
-    setEnteredPrice(event.target.value)
+    setEnteredDate(event.target.value)
     }
+
+    const expenceCreate = (event) =>{
+      event.preventDefault()
+      const expenses={title:enteredTitle,amount:enteredAmount,date:new Date(enteredDate)}
+      console.log(expenses)
+    }
+
+// const expenceCreate = (event) => {
+//   event.preventDefault()
+// const object = {title:event.target.title.value,amount:event.target.amount.value,date:event.target.date.value}
+// console.log(object)
+// }
+
+
+
 
 
   return (
-   <form >
+   <form onSubmit={expenceCreate}>
     <div className='new-expense__controls'>
       <div className='new-expense__control'>
       <label >Expense title:</label>
@@ -29,11 +44,11 @@ const amountChangeHandler=(event)=>{
       </div>
       <div className='new-expense__control'>
       <label >Expense Amount:</label>
-      <input type='number' id="amount" name="amount" onChange={amountChangeHandler}/>
+      <input type='number' id="amount" name="amount" onChange={amountChangeHandler} />
       </div>
       <div className='new-expense__control'>
       <label >Date:</label>
-      <input type='date' id="date" name="date" onChange={dateChangeHandler}/>
+      <input type='date' id="date" name="date" onChange={dateChangeHandler} />
       </div>
       </div>
       <div className='new-expense__actions'>
