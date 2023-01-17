@@ -29,7 +29,8 @@ function App() {
     <div>
       <h2> Let's get Started! </h2>
       <NewExpense/>
-      {expenses.map((expense) => {
+      {
+      expenses.map((expense) => {
         return (
           <Expenses
             date={expense.date}
