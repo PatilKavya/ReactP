@@ -6,3 +6,7 @@
     max-width: 95%;
     
     }
+    .expenses-list__fallback {
+        color: white;
+        text-align: center;
+      }
