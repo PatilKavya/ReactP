@@ -1,25 +1,25 @@
-import React from 'react';
+import React from "react";
 import ExpenseItem from "./ExpenseItem";
-import Card from '../UI/Card'
-import './Expenses.css' 
+import Card from "../UI/Card";
+import "./Expenses.css";
 
 
 const Expenses = (props) => {
+  const deleteHandler = (event) => {
+    const item = event.target.parentElement;
+    item.remove();
+  };
 
-      const deleteHandler = (event) =>{
-            const item=event.target.parentElement
-           item.remove();
-        
-      }
-      
-    return (
+  return (
     <Card className="expenses">
-         <ExpenseItem date={props.date}
-            title={props.title}
-            price={props.price}></ExpenseItem>
-            <button onClick={deleteHandler}>Delete Expence</button>
-      </Card>
-      );
-}
+      <ExpenseItem
+        date={props.date}
+        title={props.title}
+        price={props.price}
+      ></ExpenseItem>
+      <button onClick={deleteHandler}>Delete Expence</button>
+    </Card>
+  );
+};
 
 export default Expenses;
